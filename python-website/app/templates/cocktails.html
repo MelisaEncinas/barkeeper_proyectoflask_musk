@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}Cócteles{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Consultas y Recomendaciones</h1>
+  <div class="search-bar">
+    <input type="text" id="input-busqueda" placeholder="Escribe un ingrediente..." />
+  </div>
+
+  <div class="gallery">
+    {% for cocktail in cocktails %}
+    <div class="cocktail-item">
+        <a href="{{ url_for('cocktail_detail', cocktail_name=cocktail['nombre']) }}">
+            <img src="{{ cocktail['imagen'] }}" alt="{{ cocktail['nombre'] }}" class="cocktail-image">
+        </a>
+        <p class="cocktail-name">{{ cocktail['nombre'] }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+
+  <div class="cocktail-details" id="detalle-coctel">
+  </div>
+</div>
+
+<script>
+  function mostrarGaleria(cocteles) {
+    const galeriaDiv = document.getElementById('galeria-cocteles');
+    galeriaDiv.innerHTML = cocteles.map(coctel => `
+      <div class="cocktail-item" data-nombre="${coctel.nombre}">
+        <img src="${coctel.imagen}" alt="${coctel.nombre}" />
+        <p>${coctel.nombre}</p>
+      </div>
+    `).join('');
+
+    document.querySelectorAll('.cocktail-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const nombreCoctel = item.getAttribute('data-nombre');
+        const coctelSeleccionado = cocteles.find(c => c.nombre === nombreCoctel);
+        mostrarDetallesCoctel(coctelSeleccionado);
+      });
+    });
+  }
+
+  function mostrarDetallesCoctel(coctel) {
+    const detalleDiv = document.getElementById('detalle-coctel');
+    detalleDiv.innerHTML = `
+      <h2>${coctel.nombre}</h2>
+      <p><strong>Descripción:</strong> ${coctel.descripcion}</p>
+      <p><strong>Ingredientes:</strong> ${coctel.ingredientes.join(', ')}</p>
+      <p><strong>Elaboración:</strong> ${coctel.elaboracion}</p>
+    `;
+  }
+
+  const inputBusqueda = document.getElementById('input-busqueda');
+
+  inputBusqueda.addEventListener('input', (event) => {
+    const valorBusqueda = event.target.value.trim();
+    fetch(`/cocktails/search?ingrediente=${valorBusqueda}`)
+      .then(response => response.json())
+      .then(data => mostrarGaleria(data));
+  });
+
+  fetch('/cocktails/search?ingrediente=')
+    .then(response => response.json())
+    .then(data => mostrarGaleria(data));
+</script>
+{% endblock %}

@@ -1,0 +1,76 @@
+.page-nosotros {
+  color: #ffffff;
+  padding: 20px; 
+  min-height: 100vh;
+  font-family: 'Stitch Party', sans-serif;
+}
+.translucent-box {
+  background-color: white;
+  color: rgb(148, 138, 138);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-nosotros h2, 
+.page-nosotros h3, 
+.page-nosotros p, 
+.page-nosotros ul {
+  padding: 0;
+  margin: 0 0 20px 0;
+  color: #eee9e9; 
+}
+
+.page-nosotros h2 {
+  font-size: 2.5em; 
+}
+
+.page-nosotros h3 {
+  font-size: 2em; 
+}
+
+.page-nosotros p {
+  font-size: 1.5em; 
+}
+
+.page-nosotros ul {
+  font-size: 1.5em; 
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-unit {
+  text-align: center;
+  padding: 40px;
+  margin: 20px 0;
+  color: #ffffff;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #333; 
+  color: white; 
+  padding: 10px;
+  z-index: 1000;
+}

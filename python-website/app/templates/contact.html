@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<div class="contact-header">
+    <div class="title-container">
+        <h1>CONTACTA CON NOSOTROS</h1>
+    </div>
+</div>
+<div class="contact-content">
+    <div class="contact-info">
+        <p>
+            Si quieres información y no la encuentras aquí, rellena nuestro formulario y nos comunicaremos contigo.
+            ¡No te quedes con ninguna duda! ¡Tu cóctel espera!
+        </p>
+        <p>¡Muchas gracias!</p>
+
+        <strong>Sede Central:</strong>
+        <p>Camino Barcelona 7564 - Granollers - Barcelona - España</p>
+
+        <strong>Teléfono:</strong>
+        <p>(+34) 608 292 716</p>
+
+        <strong>Comunicación y Ventas:</strong>
+        <p><a href="mailto:comunicacion@bakeeperbar.com">comunicacion@bakeeperbar.com</a></p>
+
+        <strong>Administración:</strong>
+        <p><a href="mailto:bakeeperbar@admin.com">bakeeperbar@admin.com</a></p>
+
+        <strong>Reservas:</strong>
+        <p><a href="mailto:bakeeperbar@reserva.com.ar">bakeeperbar@reserva.com.ar</a></p>
+    </div>
+
+    <div class="contact-form">
+        <h2>Formulario de Contacto</h2>
+
+        <!-- Formulario usando WTForms -->
+        <form method="POST" action="{{ url_for('contacto') }}">
+            {{ form.hidden_tag() }} <!-- Protege contra ataques CSRF -->
+
+            <!-- Campo para el nombre -->
+            <div class="form-group">
+                {{ form.name.label }}
+                {{ form.name(class="form-control") }}
+                {% if form.name.errors %}
+                    <ul class="error-message">
+                        {% for error in form.name.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Campo para el correo electrónico -->
+            <div class="form-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-control") }}
+                {% if form.email.errors %}
+                    <ul class="error-message">
+                        {% for error in form.email.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Campo para el teléfono -->
+            <div class="form-group">
+                {{ form.phone.label }}
+                {{ form.phone(class="form-control") }}
+                {% if form.phone.errors %}
+                    <ul class="error-message">
+                        {% for error in form.phone.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Campo para el mensaje -->
+            <div class="form-group">
+                {{ form.message.label }}
+                {{ form.message(class="form-control") }}
+                {% if form.message.errors %}
+                    <ul class="error-message">
+                        {% for error in form.message.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Botón de envío -->
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

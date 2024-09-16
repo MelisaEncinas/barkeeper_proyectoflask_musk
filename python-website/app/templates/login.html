@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block extra_css %}
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            color: #000; 
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); 
+            color: #000; 
+        }
+
+        .login-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #000; 
+        }
+
+        label, .forgot-password a, .create-account {
+            color: #000; 
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000; 
+        }
+
+        .login-box button {
+            padding: 12px;
+            border: none;
+            background-color: #00b386;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-box button:hover {
+            background-color: #009973;
+        }
+
+        .or-divider {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            color: #000; 
+        }
+
+        .or-divider::before,
+        .or-divider::after {
+            content: "";
+            width: 40%;
+            height: 1px;
+            background-color: #ddd;
+            position: absolute;
+            top: 50%;
+        }
+
+        .or-divider::before {
+            left: 0;
+        }
+
+        .or-divider::after {
+            right: 0;
+        }
+        
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <h2>Iniciar Sesión</h2>
+        
+        <!-- Usa Flask-WTF para renderizar el formulario -->
+        <form method="POST" action="{{ url_for('login') }}">
+            {{ form.hidden_tag() }} <!-- Protege contra ataques CSRF -->
+
+            <!-- Campo para el correo electrónico -->
+            <div class="form-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-control", placeholder="Ingresa tu correo") }}
+                {% if form.email.errors %}
+                    <ul class="error-message">
+                        {% for error in form.email.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Campo para la contraseña -->
+            <div class="form-group">
+                {{ form.password.label }}
+                {{ form.password(class="form-control", placeholder="Ingresa tu contraseña") }}
+                {% if form.password.errors %}
+                    <ul class="error-message">
+                        {% for error in form.password.errors %}
+                            <li class="alert alert-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Mensajes Flash para notificaciones -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <ul class="error-message">
+                        {% for category, message in messages %}
+                            <li class="alert alert-{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <!-- Opción de "Recordar" -->
+            <div>
+                {{ form.remember_me() }} {{ form.remember_me.label }}
+            </div>
+
+            <!-- Enviar el formulario -->
+            {{ form.submit(class="btn btn-primary") }}
+
+        </form>
+        
+        <div class="forgot-password">
+            <a href="/forgot-password">¿Olvidó su contraseña?</a>
+        </div>
+
+        <div class="or-divider">o</div>
+
+        <!-- Botones de inicio de sesión con redes sociales -->
+        <div class="social-login">
+            <div class="social-btn social-btn-google">
+                <img src="/static/img/logogoogle.png" alt="Google Logo">
+                Continuar con Google
+            </div>
+            <div class="social-btn social-btn-microsoft">
+                <img src="/static/img/logomicrosft.png" alt="Microsoft Logo">
+                Continuar con Microsoft Account
+            </div>
+            <div class="social-btn social-btn-apple">
+                <img src="/static/img/logoapple.png" alt="Apple Logo">
+                Continuar con Apple
+            </div>
+        </div>
+
+        <!-- Enlace para registrarse -->
+        <a href="{{ url_for('mostrar_registro') }}" class="create-account">¿No tiene una cuenta? Regístrese</a>
+    </div>
+</div>
+{% endblock %}

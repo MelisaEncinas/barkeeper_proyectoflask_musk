@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+
+{% block title %}Nosotros{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nosotros.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="page-nosotros">
+        <h2>¿Qué es Barkeeper?</h2>
+        <p>En Barkeeper, es una aplicacion donde podras tener una experiencia única para explorar el fascinante mundo de los cócteles. Nuestra plataforma está diseñada para ayudarte a descubrir las mejores recetas, ingredientes y técnicas para preparar cócteles impresionantes en la comodidad de tu hogar.</p>
+
+        <h3>Nuestros Servicios</h3>
+        <ul>
+            <li><strong>Recetas Exclusivas:</strong> Encuentra una amplia variedad de recetas de cócteles, desde clásicos hasta innovaciones modernas.</li>
+            <li><strong>Recomendaciones Personalizadas:</strong> Recibe sugerencias de cócteles basadas en tus preferencias y los ingredientes que tienes a mano.</li>
+        </ul>
+
+        <h3>¿Por qué Elegirnos?</h3>
+        <p>En Barkeeper, nuestra misión es proporcionar una experiencia enriquecedora para los entusiastas de los cócteles. Ya seas un aficionado o un mixólogo experimentado, encontrarás todo lo que necesitas para elevar tu experiencia con cócteles.</p>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Barkeeper. Todos los derechos reservados.</p>
+    </div>
+{% endblock %}
+
+

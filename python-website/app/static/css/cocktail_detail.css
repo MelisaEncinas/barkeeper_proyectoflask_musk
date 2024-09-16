@@ -1,0 +1,20 @@
+.cocktail-detail {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.detail-image {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}

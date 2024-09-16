@@ -1,0 +1,13 @@
+<div class="cocktail-detail">
+    <img src="{{ cocktail['imagen'] }}" alt="{{ cocktail['nombre'] }}" class="detail-image">
+    <h2>{{ cocktail['nombre'] }}</h2>
+    <p>{{ cocktail['descripcion'] }}</p>
+    <h3>Ingredientes:</h3>
+    <ul>
+        {% for ingrediente in cocktail['ingredientes'] %}
+        <li>{{ ingrediente }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Elaboración:</h3>
+    <p>{{ cocktail['elaboracion'] }}</p>
+</div>

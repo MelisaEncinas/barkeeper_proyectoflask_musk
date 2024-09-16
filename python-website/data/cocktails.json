@@ -1,0 +1,39 @@
+[
+    {
+      "nombre": "Mojito",
+      "descripcion": "Es un cóctel dulce y refrescante, con aroma de la hierbabuena. Un cóctel clásico.",
+      "ingredientes": ["Ron", "Menta", "Limón", "Azúcar", "Soda"],
+      "elaboracion": "Machaca la menta con el azúcar y el limón, agrega el ron y llena con soda.",
+      "imagen": "static/img/mojito.jpg"
+    },
+    {
+      "nombre": "Bloody Mary",
+      "descripcion": "El Bloody Mary es un cóctel de fama internacional. Una de las teorías más extendidas dice que su creación se debe a Fernand Petiot, quien preparó por primera vez esta bebida en el año 1921, en el Harry's Bar de París. Usualmente se consume como aperitivo. Su sabor está entre lo salado y ligeramente ácido por el zumo de limón o lima, y el umami.",
+      "ingredientes": [
+        "50-60 ml de vodka",
+        "Salsa Worcestershire",
+        "Salsa Tabasco",
+        "Zumo de limón",
+        "Sal de apio",
+        "Caldo de buey",
+        "Pimienta negra recién molida",
+        "Zumo de tomate",
+        "Cubitos de hielo",
+        "Tallo de apio y rodaja de limón para decorar"
+      ],
+      "elaboracion": "1. Añadimos el vodka (para un vaso grande aproximadamente 50-60 ml), la salsa Worcestershire, el Tabasco y el zumo de limón. Le damos nuestro toque con la sal de apio, el caldo de buey y la pimienta negra recién molida. 2. En el momento que tengamos todo en el vaso, removemos utilizando una varilla para cócteles o cualquier utensilio alargado que tengamos a mano. 3. Finalmente, completamos el vaso con el zumo de tomate. 4. Añadimos bastantes cubitos de hielo enteros en un vaso grande, hasta que cubra el mismo. Es importante que el hielo no se derrita mucho y servir en un vaso largo. 5. Una vez esté todo mezclado, se sirve el Bloody Mary en un vaso alto y de gran capacidad y se remata con un tallo de apio y una rodaja de limón como decoración. También podemos cubrir los bordes de algunos vasos con jugo de limón. Simplemente frota una rodaja de limón sobre los bordes de los vasos.",
+      "imagen": "static/img/bloody_mary.jpg"
+    },
+    {
+      "nombre": "Negroni",
+      "descripcion": "El Negroni es uno de los más legendarios cócteles de aperitivo. Cuenta la historia, que el conde Camillo Negroni era un gran aficionado al Americano, un cóctel famoso en toda la mitad norte de Italia formado por Campari, vermut y soda. Un día, cansado de tomar siempre lo mismo, pidió al barman del Caffè Casoni, en Florencia, que cambiara la soda por ginebra, una bebida que acababa de conocer en un reciente viaje a Londres. Creó así uno de los cócteles más famosos y versátiles de todos los tiempos.",
+      "ingredientes": [
+        "300 ml de Campari",
+        "300 ml de vermú rojo",
+        "300 ml de ginebra"
+      ],
+      "elaboracion": "El Negroni se sirve igual que el Americano, en hielo, preferiblemente en vaso bajo y ancho y con una cáscara de naranja. Aunque veáis en algunos sitios hacerlo con coctelera, es un cóctel que, tradicionalmente, se mezcla directamente en vaso. Para armarlo solo debemos llenar el vaso de hielo y, con ayuda de un jigger, verter una parte de Campari, una de vermú rojo y una de ginebra, de 30 cl cada una. Se remueve bien con una cuchara y se termina con un twist de naranja.",
+      "imagen": "static/img/negroni.jpg"
+    }
+  ]
+  
