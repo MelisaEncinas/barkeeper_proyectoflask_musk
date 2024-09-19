@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash, request, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import RegistrationForm, LoginForm, ContactForm, SimpleForm
+from app.forms import RegistrationForm, LoginForm, ContactForm, CocktailForm, SimpleForm
 from app.models import User
 from recommender.cocktailRecommender import CocktailRecommender  # Importar el recomendador
 import json 

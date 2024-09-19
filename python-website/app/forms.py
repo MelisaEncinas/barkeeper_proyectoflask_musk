@@ -3,6 +3,12 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
+class SimpleForm(FlaskForm):
+    field1 = StringField('Field 1', validators=[DataRequired()])
+    field2 = StringField('Field 2', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()], render_kw={'placeholder': 'email'})
     password = PasswordField('Password', validators=[DataRequired()], render_kw={'placeholder': 'password'})
