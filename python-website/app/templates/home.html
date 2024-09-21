@@ -5,6 +5,13 @@
     <h1 class="welcome-title">Barkeeper!</h1>
     <h2 class="subtitle">- BIENVENIDOS -</h2>
     
-    <p class="hero-text">Descubre, Explora y Disfruta: Cócteles Especiales </p>
-    <a class="cta-button" href="{{ url_for('login') }}" role="button">Iniciar Sesión / Regístrate</a>
-    {% endblock %}
+    <p class="hero-text">Descubre, Explora y Disfruta: Cócteles Especiales</p>
+    
+    <div class="cta-buttons">
+        <a class="cta-button" href="{{ url_for('login') }}" role="button">Iniciar Sesión / Regístrate</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('cerrar_sesion') }}" class="logout-btn">Cerrar Sesión</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

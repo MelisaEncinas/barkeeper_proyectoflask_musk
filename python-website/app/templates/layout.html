@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Barkeeper{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <nav>
-        <a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a>
+        <a href="{{ url_for('index') }}" class="{% if request.endpoint == 'index' %}active{% endif %}">Home</a>
         <a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">Nosotros</a>
         <a href="{{ url_for('cocktails') }}" class="{% if request.endpoint == 'cocktails' %}active{% endif %}">Cócteles</a>
-        <a href="{{ url_for('contact') }}" class="{% if request.endpoint == 'contact' %}active{% endif %}">Contacto</a>
+        <a href="{{ url_for('contacto') }}" class="{% if request.endpoint == 'contacto' %}active{% endif %}">Contacto</a>
     </nav>
 
     <a href="{{ url_for('login') }}" class="login-register-btn">Iniciar Sesión / Registrarse</a>

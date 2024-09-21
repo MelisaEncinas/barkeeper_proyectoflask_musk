@@ -1,13 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ cocktail.nombre }} - Barkeeper{% endblock %}
+
+{% block content %}
 <div class="cocktail-detail">
-    <img src="{{ cocktail['imagen'] }}" alt="{{ cocktail['nombre'] }}" class="detail-image">
-    <h2>{{ cocktail['nombre'] }}</h2>
-    <p>{{ cocktail['descripcion'] }}</p>
-    <h3>Ingredientes:</h3>
+    <h1>{{ cocktail.nombre }}</h1>
+    <h2>Ingredientes:</h2>
     <ul>
-        {% for ingrediente in cocktail['ingredientes'] %}
-        <li>{{ ingrediente }}</li>
+        {% for ingredient in cocktail.ingredientes %}
+            <li>{{ ingredient }}</li>
         {% endfor %}
     </ul>
-    <h3>Elaboración:</h3>
-    <p>{{ cocktail['elaboracion'] }}</p>
+    <h2>Preparación:</h2>
+    <p>{{ cocktail.preparacion }}</p>
+    <a href="{{ url_for('cocktails') }}" class="back-button">Volver a Cócteles</a>
 </div>
+{% endblock %}

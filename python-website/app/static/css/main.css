@@ -40,17 +40,12 @@ body {
   margin-bottom: 20px;
 }
 
-.main-title {
-  font-size: 5em;
-  margin-bottom: 20px;
-}
-
 /* Contenedor principal */
 .container {
   width: 50%;
   margin: 20px auto;
   padding: 20px;
-  background-color: #1816167c; 
+  background-color: rgba(24, 22, 22, 0.49); 
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
@@ -96,7 +91,7 @@ body {
 
 /* Footer */
 footer {
-  position: fixed !important;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;

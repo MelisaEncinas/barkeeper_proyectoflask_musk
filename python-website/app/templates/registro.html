@@ -8,7 +8,7 @@
         <h1>Bienvenido a Barbeeker Bar:</h1>
 
         <!-- Formulario con WTForms -->
-        <form method="POST" action="{{ url_for('mostrar_registro') }}">
+        <form method="POST" action="{{ url_for('registrarse') }}">
             {{ form.hidden_tag() }} <!-- Protege contra ataques CSRF -->
 
             <!-- Campo para el nombre -->
@@ -156,7 +156,7 @@
     }
 
     body {
-        font-family: 'SodaShake', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;

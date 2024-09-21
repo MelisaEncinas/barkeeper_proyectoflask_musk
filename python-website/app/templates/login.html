@@ -102,7 +102,7 @@
         <h2>Iniciar Sesión</h2>
         
         <!-- Usa Flask-WTF para renderizar el formulario -->
-        <form method="POST" action="{{ url_for('login') }}">
+        <form method="POST" action="{{ url_for('iniciar_sesion') }}">
             {{ form.hidden_tag() }} <!-- Protege contra ataques CSRF -->
 
             <!-- Campo para el correo electrónico -->

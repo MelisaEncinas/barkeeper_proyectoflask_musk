@@ -1,4 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<cockteles>
 <recipes>
   <recipe>
     <title>Ti'punch</title>
@@ -30,7 +34,6 @@
   </recipe>
 </recipes>
 
-</recipe>
 <recipe>
   <title>Builder</title>
   <ingredients>
@@ -114,7 +117,6 @@
   </preparation>
 </recipe>
 
-</recipe>
 <recipe>
   <title>Cóctel Espumoso de Fresa y Lima (sin alcohol)</title>
   <ingredients>
@@ -203,7 +205,6 @@
   </preparation>
 </recipe>
 
-</recipe>
 <recipe>
   <title>Raifortissimo</title>
   <ingredients>
@@ -668,8 +669,6 @@
     <step>Vierte el ron, el vermut, el jugo de limón y la granadina.</step>
   </preparation>
 </recipe>
-
-  <recipe>
   <recipe>
   <title>Cóctel de frutas con lima</title>
   <ingredients>
@@ -1374,7 +1373,6 @@
     <step>Divide el cóctel en los vasos y ¡salud!</step>
   </preparation>
 </recipe>
-
 <recipe>
   <title>Cóctel rosa pomelo</title>
   <ingredients>
@@ -1387,7 +1385,6 @@
     <step>Sirve frío.</step>
   </preparation>
 </recipe>
-
 <recipe>
   <title>Cóctel Bacardi, granadina, limón</title>
   <ingredients>
@@ -1401,7 +1398,6 @@
     <step>Vierte en vasos y sirve de inmediato.</step>
   </preparation>
 </recipe>
-
 <recipe>
   <title>Cóctel MTS</title>
   <ingredients>
@@ -1415,7 +1411,6 @@
     <step>¡Tiene un sabor muy fresco!</step>
   </preparation>
 </recipe>
-
 <recipe>
   <title>Cóctel Madras</title>
   <ingredients>
@@ -1428,3 +1423,4 @@
     <step>Vierte en vasos. Añade un chorrito de granadina.</step>
   </preparation>
 </recipe>
+</cockteles>

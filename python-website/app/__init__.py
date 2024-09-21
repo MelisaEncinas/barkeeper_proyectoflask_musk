@@ -3,14 +3,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
 app = Flask(__name__)
-app.secret_key = 'tu_clave_secreta'
+app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
-# Configurar la base de datos
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 db = SQLAlchemy(app)
+login = LoginManager(app)
+login.login_view = 'iniciar_sesion'
 
-# Configurar Flask-Login
-login_manager = LoginManager(app)
-login_manager.login_view = 'login'
+from app import routes  # Importar al final para evitar problemas de importación
 
-from app import routes  # Importar las rutas después de crear la instancia de la aplicación
+if __name__ == '__main__':
+    app.run(debug=True)
